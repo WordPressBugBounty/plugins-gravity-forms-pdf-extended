@@ -1,0 +1,47 @@
+
+#tab_PDF {
+
+  /* Used on Tools page to pad out the back-to-back forms */
+  form + form {
+    margin-top: 2rem;
+  }
+
+  /* Auto clear each wrapper */
+  .gfpdf-settings-field-wrapper:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+
+  /* Handle Gravity Forms Settings Containers */
+  .gform_settings_form {
+
+    .gform-settings-panel--full {
+      grid-column: span 2;
+    }
+
+    .gfpdf-settings-field-wrapper {
+      margin-bottom: 1.25rem;
+
+      .gform-settings-panel__title {
+        color: #23282d;
+        font-size: .8125rem;
+      }
+    }
+
+    legend {
+      font-size: .875rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .gform-settings-panel__header legend {
+      margin-bottom: 0;
+    }
+  }
+
+  .gform-settings-panel--collapsible {
+    .gform-settings-panel--full {
+      grid-column: span 2;
+    }
+  }
+}

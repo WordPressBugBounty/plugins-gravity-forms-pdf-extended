@@ -1,0 +1,32 @@
+@use '../Mixins/button';
+
+#tab_PDF {
+
+  /* Rich Text field */
+  .gform-settings-input__container--with-merge-tag.gfpdf-merge-tag-container {
+    display: block;
+
+    .mt-gfpdf-merge-tag-selector-container {
+      position: relative;
+      float: right;
+      top: 3rem;
+    }
+  }
+
+  .wp-editor-wrap {
+    .wp-editor-tools {
+      button {
+        @include button.reset;
+        margin: 0;
+      }
+
+      .wp-editor-tabs button {
+        margin-left: 5px;
+      }
+    }
+
+    .quicktags-toolbar .button {
+      @include button.reset;
+    }
+  }
+}
