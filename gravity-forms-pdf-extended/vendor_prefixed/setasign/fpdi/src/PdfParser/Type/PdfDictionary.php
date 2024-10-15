@@ -4,7 +4,7 @@
  * This file is part of FPDI
  *
  * @package   setasign\Fpdi
- * @copyright Copyright (c) 2023 Setasign GmbH & Co. KG (https://www.setasign.com)
+ * @copyright Copyright (c) 2024 Setasign GmbH & Co. KG (https://www.setasign.com)
  * @license   http://opensource.org/licenses/mit-license The MIT License
  */
 namespace GFPDF_Vendor\setasign\Fpdi\PdfParser\Type;
@@ -90,8 +90,11 @@ class PdfDictionary extends \GFPDF_Vendor\setasign\Fpdi\PdfParser\Type\PdfType
      * @return PdfNull|PdfType
      * @throws PdfTypeException
      */
-    public static function get($dictionary, $key, \GFPDF_Vendor\setasign\Fpdi\PdfParser\Type\PdfType $default = null)
+    public static function get($dictionary, $key, $default = null)
     {
+        if ($default !== null && !$default instanceof \GFPDF_Vendor\setasign\Fpdi\PdfParser\Type\PdfType) {
+            throw new \InvalidArgumentException('Default value must be an instance of PdfType or null');
+        }
         $dictionary = self::ensure($dictionary);
         if (isset($dictionary->value[$key])) {
             return $dictionary->value[$key];

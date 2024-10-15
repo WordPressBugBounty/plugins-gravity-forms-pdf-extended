@@ -37,7 +37,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /*
  * Load dependencies
  */
-require_once PDF_PLUGIN_DIR . 'src/autoload.php';
+require_once __DIR__ . '/autoload.php';
 
 /**
  * @since 4.0
@@ -177,7 +177,7 @@ class Router implements Helper\Helper_Interface_Actions, Helper\Helper_Interface
 	public function init() {
 
 		/* Set up our logger is not running via CLI (unit testing) */
-		$logger    = new Helper\Helper_Logger( 'gravity-pdf', 'Gravity PDF' );
+		$logger    = new Helper\Helper_Logger( 'gravity-forms-pdf-extended', 'Gravity PDF' );
 		$this->log = $logger->get_logger();
 
 		/* Set up our form object */

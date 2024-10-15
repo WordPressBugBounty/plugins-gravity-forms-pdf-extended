@@ -929,12 +929,12 @@ abstract class Helper_Abstract_Options implements Helper_Interface_Filters {
 				'mph2bdamase'          => 'MPH 2B Damase',
 			],
 
-			esc_html__( 'Indic', 'gravity-forms-pdf-extended' ) => [
+			esc_html__( 'Indic', 'gravity-forms-pdf-extended' )   => [
 				'lohitkannada' => 'Lohit Kannada',
 				'pothana2000'  => 'Pothana2000',
 			],
 
-			esc_html__( 'Arabic', 'gravity-forms-pdf-extended' ) => [
+			esc_html__( 'Arabic', 'gravity-forms-pdf-extended' )  => [
 				'xbriyaz'               => 'XB Riyaz',
 				'lateef'                => 'Lateef',
 				'kfgqpcuthmantahanaskh' => 'Bahif Uthman Taha',
@@ -945,7 +945,7 @@ abstract class Helper_Abstract_Options implements Helper_Interface_Filters {
 				'unbatang' => 'Un Batang (Korean)',
 			],
 
-			esc_html__( 'Other', 'gravity-forms-pdf-extended' ) => [
+			esc_html__( 'Other', 'gravity-forms-pdf-extended' )   => [
 				'estrangeloedessa' => 'Estrangelo Edessa (Syriac)',
 				'kaputaunicode'    => 'Kaputa (Sinhala)',
 				'abyssinicasil'    => 'Abyssinica SIL (Ethiopic)',

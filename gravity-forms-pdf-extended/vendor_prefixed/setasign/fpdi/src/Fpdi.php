@@ -4,7 +4,7 @@
  * This file is part of FPDI
  *
  * @package   setasign\Fpdi
- * @copyright Copyright (c) 2023 Setasign GmbH & Co. KG (https://www.setasign.com)
+ * @copyright Copyright (c) 2024 Setasign GmbH & Co. KG (https://www.setasign.com)
  * @license   http://opensource.org/licenses/mit-license The MIT License
  */
 namespace GFPDF_Vendor\setasign\Fpdi;
@@ -27,5 +27,5 @@ class Fpdi extends \GFPDF_Vendor\setasign\Fpdi\FpdfTpl
      *
      * @string
      */
-    const VERSION = '2.6.0';
+    const VERSION = '2.6.1';
 }

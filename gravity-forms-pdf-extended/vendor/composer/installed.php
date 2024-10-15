@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'gravitypdf/gravitypdf',
-        'pretty_version' => '6.11.4',
-        'version' => '6.11.4.0',
-        'reference' => '0bae8195a980a2a3587ca793df85047f8a476431',
+        'pretty_version' => '6.12.0',
+        'version' => '6.12.0.0',
+        'reference' => '205f003a0be4dc68b46907b4fc75da88aa525469',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -23,9 +23,9 @@
             ),
         ),
         'gravitypdf/gravitypdf' => array(
-            'pretty_version' => '6.11.4',
-            'version' => '6.11.4.0',
-            'reference' => '0bae8195a980a2a3587ca793df85047f8a476431',
+            'pretty_version' => '6.12.0',
+            'version' => '6.12.0.0',
+            'reference' => '205f003a0be4dc68b46907b4fc75da88aa525469',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -97,7 +97,7 @@
         'mpdf/mpdf' => array(
             'pretty_version' => 'dev-development',
             'version' => 'dev-development',
-            'reference' => '7bcfd71a56aa63612188b1ff8211d30ca667a26d',
+            'reference' => '8749b3e53d81c50351cc0d3221cca5c6f83b324c',
             'type' => 'library',
             'install_path' => __DIR__ . '/../mpdf/mpdf',
             'aliases' => array(
@@ -181,9 +181,9 @@
             ),
         ),
         'setasign/fpdi' => array(
-            'pretty_version' => 'v2.6.0',
-            'version' => '2.6.0.0',
-            'reference' => 'a6db878129ec6c7e141316ee71872923e7f1b7ad',
+            'pretty_version' => 'v2.6.1',
+            'version' => '2.6.1.0',
+            'reference' => '09a816004fcee9ed3405bd164147e3fdbb79a56f',
             'type' => 'library',
             'install_path' => __DIR__ . '/../setasign/fpdi',
             'aliases' => array(),

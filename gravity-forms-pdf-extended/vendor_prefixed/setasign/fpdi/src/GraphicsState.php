@@ -4,7 +4,7 @@
  * This file is part of FPDI
  *
  * @package   setasign\Fpdi
- * @copyright Copyright (c) 2023 Setasign GmbH & Co. KG (https://www.setasign.com)
+ * @copyright Copyright (c) 2024 Setasign GmbH & Co. KG (https://www.setasign.com)
  * @license   http://opensource.org/licenses/mit-license The MIT License
  */
 namespace GFPDF_Vendor\setasign\Fpdi;
@@ -23,10 +23,12 @@ class GraphicsState
     /**
      * @param Matrix|null $ctm
      */
-    public function __construct(\GFPDF_Vendor\setasign\Fpdi\Math\Matrix $ctm = null)
+    public function __construct($ctm = null)
     {
         if ($ctm === null) {
             $ctm = new \GFPDF_Vendor\setasign\Fpdi\Math\Matrix();
+        } elseif (!$ctm instanceof \GFPDF_Vendor\setasign\Fpdi\Math\Matrix) {
+            throw new \InvalidArgumentException('$ctm must be an instance of Fpdi\\Matrix or null');
         }
         $this->ctm = $ctm;
     }

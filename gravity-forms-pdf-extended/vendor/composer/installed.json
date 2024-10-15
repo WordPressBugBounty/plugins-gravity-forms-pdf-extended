@@ -578,12 +578,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/mpdf/mpdf.git",
-                "reference": "7bcfd71a56aa63612188b1ff8211d30ca667a26d"
+                "reference": "8749b3e53d81c50351cc0d3221cca5c6f83b324c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mpdf/mpdf/zipball/7bcfd71a56aa63612188b1ff8211d30ca667a26d",
-                "reference": "7bcfd71a56aa63612188b1ff8211d30ca667a26d",
+                "url": "https://api.github.com/repos/mpdf/mpdf/zipball/8749b3e53d81c50351cc0d3221cca5c6f83b324c",
+                "reference": "8749b3e53d81c50351cc0d3221cca5c6f83b324c",
                 "shasum": ""
             },
             "require": {
@@ -593,7 +593,7 @@
                 "mpdf/psr-log-aware-trait": "^2.0 || ^3.0",
                 "myclabs/deep-copy": "^1.7",
                 "paragonie/random_compat": "^1.4|^2.0|^9.99.99",
-                "php": "^5.6 || ^7.0 || ~8.0.0 || ~8.1.0 || ~8.2.0 || ~8.3.0",
+                "php": "^5.6 || ^7.0 || ~8.0.0 || ~8.1.0 || ~8.2.0 || ~8.3.0 || ~8.4.0",
                 "psr/http-message": "^1.0 || ^2.0",
                 "psr/log": "^1.0 || ^2.0 || ^3.0",
                 "setasign/fpdi": "^2.1"
@@ -610,7 +610,7 @@
                 "ext-xml": "Needed mainly for SVG manipulation",
                 "ext-zlib": "Needed for compression of embedded resources, such as fonts"
             },
-            "time": "2024-06-14T16:10:55+00:00",
+            "time": "2024-10-13T09:53:35+00:00",
             "default-branch": true,
             "type": "library",
             "installation-source": "dist",
@@ -644,7 +644,7 @@
                 "utf-8"
             ],
             "support": {
-                "docs": "http://mpdf.github.io",
+                "docs": "https://mpdf.github.io",
                 "issues": "https://github.com/mpdf/mpdf/issues",
                 "source": "https://github.com/mpdf/mpdf"
             },
@@ -1052,17 +1052,17 @@
         },
         {
             "name": "setasign/fpdi",
-            "version": "v2.6.0",
-            "version_normalized": "2.6.0.0",
+            "version": "v2.6.1",
+            "version_normalized": "2.6.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Setasign/FPDI.git",
-                "reference": "a6db878129ec6c7e141316ee71872923e7f1b7ad"
+                "reference": "09a816004fcee9ed3405bd164147e3fdbb79a56f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Setasign/FPDI/zipball/a6db878129ec6c7e141316ee71872923e7f1b7ad",
-                "reference": "a6db878129ec6c7e141316ee71872923e7f1b7ad",
+                "url": "https://api.github.com/repos/Setasign/FPDI/zipball/09a816004fcee9ed3405bd164147e3fdbb79a56f",
+                "reference": "09a816004fcee9ed3405bd164147e3fdbb79a56f",
                 "shasum": ""
             },
             "require": {
@@ -1082,7 +1082,7 @@
             "suggest": {
                 "setasign/fpdf": "FPDI will extend this class but as it is also possible to use TCPDF or tFPDF as an alternative. There's no fixed dependency configured."
             },
-            "time": "2023-12-11T16:03:32+00:00",
+            "time": "2024-09-02T10:17:15+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -1115,7 +1115,7 @@
             ],
             "support": {
                 "issues": "https://github.com/Setasign/FPDI/issues",
-                "source": "https://github.com/Setasign/FPDI/tree/v2.6.0"
+                "source": "https://github.com/Setasign/FPDI/tree/v2.6.1"
             },
             "funding": [
                 {

@@ -4,7 +4,7 @@
  * This file is part of FPDI
  *
  * @package   setasign\Fpdi
- * @copyright Copyright (c) 2023 Setasign GmbH & Co. KG (https://www.setasign.com)
+ * @copyright Copyright (c) 2024 Setasign GmbH & Co. KG (https://www.setasign.com)
  * @license   http://opensource.org/licenses/mit-license The MIT License
  */
 namespace GFPDF_Vendor\setasign\Fpdi\PdfParser\Type;
@@ -29,12 +29,15 @@ class PdfStream extends \GFPDF_Vendor\setasign\Fpdi\PdfParser\Type\PdfType
      *
      * @param PdfDictionary $dictionary
      * @param StreamReader $reader
-     * @param PdfParser $parser Optional to keep backwards compatibility
+     * @param PdfParser|null $parser Optional to keep backwards compatibility
      * @return self
      * @throws PdfTypeException
      */
-    public static function parse(\GFPDF_Vendor\setasign\Fpdi\PdfParser\Type\PdfDictionary $dictionary, \GFPDF_Vendor\setasign\Fpdi\PdfParser\StreamReader $reader, \GFPDF_Vendor\setasign\Fpdi\PdfParser\PdfParser $parser = null)
+    public static function parse(\GFPDF_Vendor\setasign\Fpdi\PdfParser\Type\PdfDictionary $dictionary, \GFPDF_Vendor\setasign\Fpdi\PdfParser\StreamReader $reader, $parser = null)
     {
+        if ($parser !== null && !$parser instanceof \GFPDF_Vendor\setasign\Fpdi\PdfParser\PdfParser) {
+            throw new \InvalidArgumentException('$parser must be an instance of PdfParser or null');
+        }
         $v = new self();
         $v->value = $dictionary;
         $v->reader = $reader;
