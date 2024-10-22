@@ -247,7 +247,23 @@ class Model_System_Report extends Helper_Abstract_Model {
 		}
 
 		/* Global Settings */
+		$is_canonical_release             = is_file( plugin_dir_path( GPDF_PLUGIN_FILE ) . 'gravity-pdf-updater.php' );
+		$is_not_canonical_release_message = wp_kses(
+			sprintf(
+				__( 'In order to get updates direct from GravityPDF.com %1$syou need to perform a one-time download of the plugin%2$s.', 'gravity-forms-pdf-extended' ),
+				'<a href="https://gravitypdf.com/news/installing-and-upgrading-to-the-canonical-version-of-gravity-pdf/">',
+				'</a>',
+			),
+			[ 'a' => [ 'href' => true ] ]
+		);
+
 		$items[2] = [
+			'canonical_release'             => [
+				'label'        => esc_html__( 'Canonical Release', 'gravity-forms-pdf-extended' ),
+				'value'        => $is_canonical_release ? $this->getController()->view->get_icon( true ) : $this->getController()->view->get_icon( false ) . $is_not_canonical_release_message,
+				'value_export' => $is_canonical_release ? esc_html__( 'Yes', 'gravity-forms-pdf-extended' ) : esc_html__( 'No', 'gravity-forms-pdf-extended' ),
+			],
+
 			'pdf_entry_list_action'         => [
 				'label'        => esc_html__( 'PDF Entry List Action', 'gravity-forms-pdf-extended' ),
 				'value'        => $this->options->get_option( 'default_action', 'View' ) === 'View' ? esc_html__( 'View', 'gravity-forms-pdf-extended' ) : esc_html__( 'Download', 'gravity-forms-pdf-extended' ),
