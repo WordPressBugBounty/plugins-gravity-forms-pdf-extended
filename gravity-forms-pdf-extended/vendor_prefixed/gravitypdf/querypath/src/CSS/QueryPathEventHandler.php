@@ -687,9 +687,15 @@ class QueryPathEventHandler implements \GFPDF_Vendor\QueryPath\CSS\EventHandler,
         if (\count($rule) == 0) {
             throw new \GFPDF_Vendor\QueryPath\CSS\ParseException("nth-child value is invalid.");
         }
-        // Each of these is legal: 1, -1, and -. '-' is shorthand for -1.
+        // Each of these is legal: 1, -1, - and <empty>. '-' is shorthand for -1. <empty> is shorthand for 1
         $aVal = \trim($rule[0]);
-        $aVal = $aVal == '-' ? -1 : (int) $aVal;
+        if ($aVal === '') {
+            $aVal = 1;
+        } elseif ($aVal === '-') {
+            $aVal = -1;
+        } else {
+            $aVal = (int) $aVal;
+        }
         $bVal = !empty($rule[1]) ? (int) \trim($rule[1]) : 0;
         return [$aVal, $bVal];
     }

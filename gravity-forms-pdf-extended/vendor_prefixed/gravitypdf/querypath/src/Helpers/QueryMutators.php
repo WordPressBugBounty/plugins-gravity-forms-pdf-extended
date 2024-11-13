@@ -420,7 +420,7 @@ trait QueryMutators
     public function wrapAll($markup)
     {
         if ($this->matches->count() === 0) {
-            return;
+            return $this;
         }
         $data = $this->prepareInsert($markup);
         if (empty($data)) {

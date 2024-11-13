@@ -207,6 +207,7 @@ class ComposerStaticInitGravityPDFPlugin
         'GFPDF_Vendor\\DeepCopy\\Matcher\\PropertyTypeMatcher' => __DIR__ . '/../..' . '/vendor_prefixed/myclabs/deep-copy/src/DeepCopy/Matcher/PropertyTypeMatcher.php',
         'GFPDF_Vendor\\DeepCopy\\Reflection\\ReflectionHelper' => __DIR__ . '/../..' . '/vendor_prefixed/myclabs/deep-copy/src/DeepCopy/Reflection/ReflectionHelper.php',
         'GFPDF_Vendor\\DeepCopy\\TypeFilter\\Date\\DateIntervalFilter' => __DIR__ . '/../..' . '/vendor_prefixed/myclabs/deep-copy/src/DeepCopy/TypeFilter/Date/DateIntervalFilter.php',
+        'GFPDF_Vendor\\DeepCopy\\TypeFilter\\Date\\DatePeriodFilter' => __DIR__ . '/../..' . '/vendor_prefixed/myclabs/deep-copy/src/DeepCopy/TypeFilter/Date/DatePeriodFilter.php',
         'GFPDF_Vendor\\DeepCopy\\TypeFilter\\ReplaceFilter' => __DIR__ . '/../..' . '/vendor_prefixed/myclabs/deep-copy/src/DeepCopy/TypeFilter/ReplaceFilter.php',
         'GFPDF_Vendor\\DeepCopy\\TypeFilter\\ShallowCopyFilter' => __DIR__ . '/../..' . '/vendor_prefixed/myclabs/deep-copy/src/DeepCopy/TypeFilter/ShallowCopyFilter.php',
         'GFPDF_Vendor\\DeepCopy\\TypeFilter\\Spl\\ArrayObjectFilter' => __DIR__ . '/../..' . '/vendor_prefixed/myclabs/deep-copy/src/DeepCopy/TypeFilter/Spl/ArrayObjectFilter.php',

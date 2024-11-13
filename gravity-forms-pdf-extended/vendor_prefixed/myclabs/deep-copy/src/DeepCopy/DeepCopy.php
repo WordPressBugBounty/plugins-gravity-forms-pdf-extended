@@ -4,6 +4,7 @@ namespace GFPDF_Vendor\DeepCopy;
 
 use ArrayObject;
 use DateInterval;
+use DatePeriod;
 use DateTimeInterface;
 use DateTimeZone;
 use GFPDF_Vendor\DeepCopy\Exception\CloneException;
@@ -12,6 +13,7 @@ use GFPDF_Vendor\DeepCopy\Filter\Filter;
 use GFPDF_Vendor\DeepCopy\Matcher\Matcher;
 use GFPDF_Vendor\DeepCopy\Reflection\ReflectionHelper;
 use GFPDF_Vendor\DeepCopy\TypeFilter\Date\DateIntervalFilter;
+use GFPDF_Vendor\DeepCopy\TypeFilter\Date\DatePeriodFilter;
 use GFPDF_Vendor\DeepCopy\TypeFilter\Spl\ArrayObjectFilter;
 use GFPDF_Vendor\DeepCopy\TypeFilter\Spl\SplDoublyLinkedListFilter;
 use GFPDF_Vendor\DeepCopy\TypeFilter\TypeFilter;
@@ -57,6 +59,7 @@ class DeepCopy
         $this->useCloneMethod = $useCloneMethod;
         $this->addTypeFilter(new \GFPDF_Vendor\DeepCopy\TypeFilter\Spl\ArrayObjectFilter($this), new \GFPDF_Vendor\DeepCopy\TypeMatcher\TypeMatcher(\ArrayObject::class));
         $this->addTypeFilter(new \GFPDF_Vendor\DeepCopy\TypeFilter\Date\DateIntervalFilter(), new \GFPDF_Vendor\DeepCopy\TypeMatcher\TypeMatcher(\DateInterval::class));
+        $this->addTypeFilter(new \GFPDF_Vendor\DeepCopy\TypeFilter\Date\DatePeriodFilter(), new \GFPDF_Vendor\DeepCopy\TypeMatcher\TypeMatcher(\DatePeriod::class));
         $this->addTypeFilter(new \GFPDF_Vendor\DeepCopy\TypeFilter\Spl\SplDoublyLinkedListFilter($this), new \GFPDF_Vendor\DeepCopy\TypeMatcher\TypeMatcher(\SplDoublyLinkedList::class));
     }
     /**

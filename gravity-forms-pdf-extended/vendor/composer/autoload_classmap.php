@@ -179,6 +179,7 @@ return array(
     'GFPDF_Vendor\\DeepCopy\\Matcher\\PropertyTypeMatcher' => $baseDir . '/vendor_prefixed/myclabs/deep-copy/src/DeepCopy/Matcher/PropertyTypeMatcher.php',
     'GFPDF_Vendor\\DeepCopy\\Reflection\\ReflectionHelper' => $baseDir . '/vendor_prefixed/myclabs/deep-copy/src/DeepCopy/Reflection/ReflectionHelper.php',
     'GFPDF_Vendor\\DeepCopy\\TypeFilter\\Date\\DateIntervalFilter' => $baseDir . '/vendor_prefixed/myclabs/deep-copy/src/DeepCopy/TypeFilter/Date/DateIntervalFilter.php',
+    'GFPDF_Vendor\\DeepCopy\\TypeFilter\\Date\\DatePeriodFilter' => $baseDir . '/vendor_prefixed/myclabs/deep-copy/src/DeepCopy/TypeFilter/Date/DatePeriodFilter.php',
     'GFPDF_Vendor\\DeepCopy\\TypeFilter\\ReplaceFilter' => $baseDir . '/vendor_prefixed/myclabs/deep-copy/src/DeepCopy/TypeFilter/ReplaceFilter.php',
     'GFPDF_Vendor\\DeepCopy\\TypeFilter\\ShallowCopyFilter' => $baseDir . '/vendor_prefixed/myclabs/deep-copy/src/DeepCopy/TypeFilter/ShallowCopyFilter.php',
     'GFPDF_Vendor\\DeepCopy\\TypeFilter\\Spl\\ArrayObjectFilter' => $baseDir . '/vendor_prefixed/myclabs/deep-copy/src/DeepCopy/TypeFilter/Spl/ArrayObjectFilter.php',
