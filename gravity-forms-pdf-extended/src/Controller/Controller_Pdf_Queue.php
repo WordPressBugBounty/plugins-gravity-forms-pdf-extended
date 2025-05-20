@@ -13,7 +13,7 @@ use Psr\Log\LoggerInterface;
 
 /**
  * @package     Gravity PDF
- * @copyright   Copyright (c) 2024, Blue Liquid Designs
+ * @copyright   Copyright (c) 2025, Blue Liquid Designs
  * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
  */
 
@@ -242,7 +242,12 @@ class Controller_Pdf_Queue extends Helper_Abstract_Controller {
 	 */
 	public function queue_async_tasks( $form, $entry ) {
 		foreach ( $this->form_async_notifications as $notification ) {
-			$this->queue->push_to_queue( $this->get_queue_tasks( $entry, $form, [ $notification ] ) );
+			$tasks = $this->get_queue_tasks( $entry, $form, [ $notification ] );
+
+			/* Push each task individually for forwards compatibility with new Background Processing update */
+			foreach ( $tasks as $task ) {
+				$this->queue->push_to_queue( [ $task ] );
+			}
 		}
 	}
 
@@ -340,10 +345,9 @@ class Controller_Pdf_Queue extends Helper_Abstract_Controller {
 
 		foreach ( $pdfs as $pdf ) {
 			$pdf_queue_data = [
-				'id'            => $this->get_queue_id( $form, $entry, $pdf ),
-				'func'          => '\GFPDF\Statics\Queue_Callbacks::create_pdf',
-				'args'          => [ $entry['id'], $pdf['id'] ],
-				'unrecoverable' => true,
+				'id'   => 'create-pdf-' . $this->get_queue_id( $form, $entry, $pdf ),
+				'func' => '\GFPDF\Statics\Queue_Callbacks::create_pdf',
+				'args' => [ $entry['id'], $pdf['id'] ],
 			];
 
 			/* Check if we need to save the PDF due to a filter */
@@ -388,7 +392,7 @@ class Controller_Pdf_Queue extends Helper_Abstract_Controller {
 			foreach ( $pdfs as $pdf ) {
 				if ( $this->model_pdf->maybe_attach_to_notification( $notification, $pdf, $entry, $form ) ) {
 					$queue_data[] = [
-						'id'   => $this->get_queue_id( $form, $entry, $pdf ) . '-' . $notification['id'],
+						'id'   => 'send-notification-' . $this->get_queue_id( $form, $entry, $pdf ) . '-' . $notification['id'],
 						'func' => '\GFPDF\Statics\Queue_Callbacks::send_notification',
 						'args' => [ $form['id'], $entry['id'], $notification ],
 					];

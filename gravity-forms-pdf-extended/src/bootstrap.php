@@ -25,7 +25,7 @@ use Psr\Log\LoggerInterface;
 
 /**
  * @package     Gravity PDF
- * @copyright   Copyright (c) 2024, Blue Liquid Designs
+ * @copyright   Copyright (c) 2025, Blue Liquid Designs
  * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
  */
 
@@ -206,6 +206,19 @@ class Router implements Helper\Helper_Interface_Actions, Helper\Helper_Interface
 			$this->notices,
 			$this->templates
 		);
+
+		/* Load Background Queue classes */
+		if ( version_compare( \GFCommon::$version, '2.9.7.2', '>=' ) ) {
+			if ( ! class_exists( '\Gravity_Forms\Gravity_Forms\Async\GF_Background_Process' ) ) {
+				require_once GFCommon::get_base_path() . '/includes/async/class-gf-background-process.php';
+			}
+
+			if ( ! class_exists( 'GF_Background_Process' ) ) {
+				class_alias( \Gravity_Forms\Gravity_Forms\Async\GF_Background_Process::class, 'GF_Background_Process', false );
+			}
+		} elseif ( ! class_exists( 'WP_Async_Request' ) ) {
+				require_once GFCommon::get_base_path() . '/includes/libraries/wp-async-request.php';
+		}
 
 		/* Setup our Singleton object */
 		$this->singleton = new Helper_Singleton();
