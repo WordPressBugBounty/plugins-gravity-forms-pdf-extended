@@ -5,7 +5,7 @@ Donate link: https://gravitypdf.com/donate-to-plugin/
 Tags: gravity forms, form, contact form, pdf, email
 Requires at least: 5.3
 Tested up to: 6.8
-Stable tag: 6.12.5.1
+Stable tag: 6.12.6.1
 Requires PHP: 7.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl.txt
@@ -122,12 +122,18 @@ No. Gravity PDF can only be used with Gravity Forms. It cannot generate PDFs for
 
 == Changelog ==
 
-= 6.12.5.1 =
-* 🧹 Update version number in readme.txt file
+= 6.12.6.1 =
+* 🧹 Housekeeping: Update version number in readme.txt file
 
-= 6.12.5 =
-* 🐞 Bug: Fix slow PDF Background Processing queue after a retry delay was added to the background processing library in Gravity Forms 2.9.7+
-* 🧹 Housekeeping: Update PDF Background Processing queue to be compatible with Gravity Forms 2.9.7+ background processing library update
-* 🧹 Housekeeping: Fix Background Processing deprecation notice when running Gravity Forms 2.9.7+
+= 6.12.6 =
+* 🐞 Bug: Add additional guards for expected value when displaying File Upload field in PDFs (prevents PHP notice)
+* 🐞 Bug: Cleanup Background Processing queue when setting is toggled on/off
+* 🐞 Bug: Add additional guards for expected value when displaying List field in PDFs (prevents PHP notice if the first row in a list is empty)
+* 🐞 Bug: Ensure Gravity PDF system status information is in English when copied to clipboard
+* 🐞 Bug: Fix fatal error when Gravity Forms logging is turned on, but the directory where log files are saved is not writable by the web server
+* 🐞 Bug: Resolve memory problem generating Core PDFs if a Rich Text Paragraph field contains more than 10+ classes (elements with more than 8 classes will have extras removed)
+* 🐞 Bug: Fix 'translations loaded too early' PHP notice if any plugin requirements aren't met
+* 🐞 Bug: Pass the filtered 'use_value' and 'use_admin_label' arguments when determining if the product table is empty
+* 🧹 Housekeeping: Move Gravity PDF system status information to the bottom of the report
 
 See CHANGELOG.txt in the plugin zip for the full changelog.
